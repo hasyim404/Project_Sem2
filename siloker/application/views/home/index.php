@@ -86,7 +86,7 @@
             </div>
           </div>
       </div>
-    <!-- /Tentang -->
+    <!-- /Tentangg -->
 
       <!-- Sidebar -->
       <div class="sidebar">
