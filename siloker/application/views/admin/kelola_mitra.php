@@ -29,15 +29,11 @@
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search">
-          <button class="btn btn-outline-info tombol" type="button"><a href="<?=base_url('index.php/login')?>">Login</a></button>
+          <a href="<?=base_url('index.php/login')?>" class="btn btn-outline-info tombol btn-md" role="button" aria-pressed="true">Login</a>
         </form>
       </div>
   </nav>
   <!-- Navbar -->
-
-  <!-- isi -->
-    <!-- Keloker -->
-
 
   <div class="container">
       <nav aria-label="breadcrumb" style="padding-top: 30px;">
@@ -53,74 +49,30 @@
     <div class="table-responsive">
       <table class="table table-bordered table-hover text-center bg-white">
         <thead>
-          <tr class="table-warning">
-            <th>No</th>
-            <th>Nama Perusahaan</th>
-            <th>Bidang Usaha</th>
-            <th>Kontak Person</th>
-            <th>Email</th>
-            <th>Telepon</th>
-            <th>Alamat Web</th>
-            <th>Action</th>
-          </tr>
+            <tr>
+              <th>NO</th><th>Nama</th><th>Alamat</th><th>Kontak</th><th>No. Telpon</th><th>Email</th>
+              <th>Alamat Web</th><th>Bidang Usaha</th><th>Sektor Usaha</th><th>Action</th>
+            </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>PT ABC</td>
-            <td>Ahmad Fikri</td>
-            <td>Property</td>
-            <td>fikri@gmail.com</td>
-            <td>082298227422</td>
-            <td>https://abc.com</td>
-            <td><a href="#">Details</a></br>
-            </a> <a href="#">Edit </a></br>
-            <a href="#">Delete</a>
-            </td>
-          </tr>
-          <tr>
-            <tr>
-              <td>2</td>
-              <td>PT ABC</td>
-              <td>Ahmad Fikri</td>
-              <td>Property</td>
-              <td>fikri@gmail.com</td>
-              <td>082298227422</td>
-              <td>https://abc.com</td>
-              <td><a href="#">Details</a></br>
-              </a> <a href="#">Edit </a></br>
-              <a href="#">Delete</a>
-              </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>PT ABC</td>
-              <td>Ahmad Fikri</td>
-              <td>Property</td>
-              <td>fikri@gmail.com</td>
-              <td>082298227422</td>
-              <td>https://abc.com</td>
-              <td><a href="#">Details</a></br>
-              </a> <a href="#">Edit </a></br>
-              <a href="#">Delete</a>
-              </td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>PT ABC</td>
-              <td>Ahmad Fikri</td>
-              <td>Property</td>
-              <td>fikri@gmail.com</td>
-              <td>082298227422</td>
-              <td>https://abc.com</td>
-              <td><a href="#">Details</a></br>
-              </a> <a href="#">Edit </a></br>
-              <a href="#">Delete</a>
-              </td>
-            </tr>
+          <?php
+          $nomor=1;
+            foreach ($data_mitra as $mitra): ?>
+              <tr><td><?= $nomor++ ?></td>
+              <td><?= $mitra->nama ?></td>
+              <td><?= $mitra->alamat ?></td>
+              <td><?= $mitra->kontak ?></td>
+              <td><?= $mitra->telpon ?></td>
+              <td><?= $mitra->email ?></td>
+              <td><?= $mitra->web ?></td>
+              <td><?= $mitra->bidang_usaha_id ?></td>
+              <td><?= $mitra->sektor_usaha_id ?></td>
+              <td><a href="<?= base_url('index.php/admin/edit_mitra/'.$mitra->id)?>" class="btn btn-info btn-sm" role="button" aria-pressed="true"><i class="fas fa-edit"></i></a>
+              <a href="<?= base_url('index.php/admin/delete_mitra/'.$mitra->id)?>" class="btn btn-danger btn-sm active" role="button" aria-pressed="true"
+              onclick="return onDelete(\'Anda yakin untuk menghapus ? '\)"><i class="fas fa-trash-alt"></i></a></td></tr>
+          <?php endforeach ?>
         </tbody>
       </table>
     </div>
   </div>
 
-    <!-- Keloker -->

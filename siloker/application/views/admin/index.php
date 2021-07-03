@@ -29,7 +29,7 @@
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search">
-          <button class="btn btn-outline-info tombol" type="button"><a href="<?=base_url('index.php/login')?>">Login</a></button>
+          <a href="<?=base_url('index.php/login')?>" class="btn btn-outline-info tombol btn-md" role="button" aria-pressed="true">Login</a>
         </form>
       </div>
   </nav>
@@ -50,25 +50,25 @@
         <div class="col-md-12 mt-2 ml-2 mr-2">
             <div class="row justify-content-center text-center">
                 <div class="col-md-2 d-flex flex-column menu btn-light">
-                    <a href="<?=base_url('index.php/admin/kelola_loker')?>" aria-pressed="false">
+                    <a href="<?=base_url('index.php/admin/kelola_loker')?>" role="button" aria-pressed="true">
                         <i class="fa fa-briefcase fa-5x text-info" aria-hidden="true"></i></br>
                         <p>Kelola Lowongan Kerja</p>
                     </a>
                 </div>
                 <div class="col-md-2 d-flex flex-column menu btn-light">
-                    <a href="<?=base_url('index.php/admin/kelola_mitra')?>" aria-pressed="false">
+                    <a href="<?=base_url('index.php/admin/kelola_mitra')?>" role="button" aria-pressed="true">
                         <i class="fa fa-user-plus fa-5x text-info" aria-hidden="true"></i></br>
                         <p>Kelola Mitra</p>
                     </a>
                 </div>
                 <div class="col-md-2 d-flex flex-column menu btn-light">
-                    <a href="<?=base_url('index.php/admin/isi_berita')?>" aria-pressed="false">
+                    <a href="<?=base_url('index.php/admin/isi_berita')?>" role="button" aria-pressed="true">
                         <i class="fas fa-folder-plus fa-5x text-info" aria-hidden="true"></i></br>
                         <p>Isi Berita</p>
                     </a>
                 </div>
                 <div class="col-md-2 d-flex flex-column menu btn-light">
-                    <a href="<?=base_url('index.php/admin/daftar_berita')?>" aria-pressed="false">
+                    <a href="<?=base_url('index.php/admin/daftar_berita')?>" role="button" aria-pressed="true">
                         <i class="fas fa-newspaper fa-5x text-info" aria-hidden="true"></i></br>
                         <p>Daftar Berita</p>
                     </a>

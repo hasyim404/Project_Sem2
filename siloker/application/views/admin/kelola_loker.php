@@ -38,13 +38,12 @@ function onDelete(pesan){
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search">
-          <button class="btn btn-outline-info tombol" type="button"><a href="<?=base_url('index.php/login')?>">Login</a></button>
+          <a href="<?=base_url('index.php/login')?>" class="btn btn-outline-info tombol btn-md" role="button" aria-pressed="true">Login</a>
         </form>
       </div>
   </nav>
   <!-- Navbar -->
 
-  <!-- isi -->
   <div class="container">
       <nav aria-label="breadcrumb" style="padding-top: 30px;">
         <ol class="breadcrumb bread justify-content-end bg-white">
@@ -54,7 +53,6 @@ function onDelete(pesan){
         </ol>
     </nav>
   </div>
-  <?= form_open('admin/edit')?>
   <div class="container">
     <div class="table-responsive">
       <table class="table table-bordered table-hover text-center bg-white">
@@ -72,8 +70,8 @@ function onDelete(pesan){
               <td><?= $loker->tanggal_akhir ?></td>
               <td><?= $loker->mitra_id ?></td>
               <td><?= $loker->email ?></td>
-              <td><a href="<?= base_url('index.php/admin/edit/'.$loker->id)?>" class="btn btn-info btn-lg" role="button" aria-pressed="true"><i class="fas fa-edit"></i></a>
-              <a href="<?= base_url('index.php/admin/delete/'.$loker->id)?>" class="btn btn-danger btn-lg active" role="button" aria-pressed="true"
+              <td><a href="<?= base_url('index.php/admin/edit_loker/'.$loker->id)?>" class="btn btn-info btn-sm" role="button" aria-pressed="true"><i class="fas fa-edit"></i></a>
+              <a href="<?= base_url('index.php/admin/delete_loker/'.$loker->id)?>" class="btn btn-danger btn-sm active" role="button" aria-pressed="true"
               onclick="return onDelete(\'Anda yakin untuk menghapus ? '\)"><i class="fas fa-trash-alt"></i></a></td></tr>
           <?php endforeach ?>
         </tbody>

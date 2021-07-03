@@ -18,7 +18,7 @@
               <a class="nav-link" href="<?=base_url('index.php/isi_loker')?>">Isi Loker<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="<?=base_url('index.php/daftar_mitra')?>">Daftar Mitra</a>
+              <a class="nav-link" href="<?=base_url('index.php/daftar_berita')?>">Daftar Mitra</a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="<?=base_url('index.php/berita')?>">Berita</a>
@@ -39,11 +39,13 @@
     <!-- Keloker -->
 
 
-  <div class="container">
+    <div class="container">
       <nav aria-label="breadcrumb" style="padding-top: 30px;">
         <ol class="breadcrumb bread justify-content-end bg-white">
         <li class="breadcrumb-item"><a href="<?=base_url('index.php')?>">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Isi Loker</li>
+        <li class="breadcrumb-item"><a href="<?=base_url('index.php/admin')?>">Admin</a></li>
+        <li class="breadcrumb-item"><a href="<?=base_url('index.php/admin/kelola_loker')?>">Kelola Lowongan Kerja</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Edit Lowongan Kerja</li>
         </ol>
     </nav>
   </div>
@@ -51,11 +53,11 @@
   <div class="container">
     <fieldset style="background-color: white;">
       <div class="col-md-12">
-        <h2 class="mt-3 mb-4">Form Lowongan Pekerjaan</h2>
+        <h2 class="mt-3 mb-4">Edit Lowongan Pekerjaan</h2>
       </div>
     
     <div class="container">
-        <?= form_open('isi_loker/submit_loker') ?>
+        <?= form_open('admin/update_loker') ?>
           <div class="form-group row">
             <label for="deskripsi_pekerjaan" class="col-4 col-form-label">Deskripsi Pekerjaan</label> 
             <div class="col-8">
@@ -65,7 +67,7 @@
                     <i class="fa fa-audio-description"></i>
                   </div>
                 </div> 
-                <input id="deskripsi_pekerjaan" name="deskripsi_pekerjaan" type="text" required="required" class="form-control">
+                <input id="deskripsi_pekerjaan" value="<?= $objloker->deskripsi_pekerjaan ?>" name="deskripsi_pekerjaan" type="text" required="required" class="form-control">
               </div>
             </div>
           </div>
@@ -78,7 +80,7 @@
                     <i class="fa fa-calendar"></i>
                   </div>
                 </div> 
-                <input id="tanggal_akhir" name="tanggal_akhir" type="date" required="required" class="form-control">
+                <input id="tanggal_akhir" value="<?= $objloker->tanggal_akhir ?>" name="tanggal_akhir" type="date" required="required" class="form-control">
               </div>
             </div>
           </div>
@@ -87,7 +89,7 @@
             <div class="col-8">
               <select id="id_mitra" name="mitra_id" required="required" class="custom-select">
                 <?php foreach ($data_mitra as $data): ?>
-                  <option value="<?php echo $data->id ?>"><?php echo $data->nama ?></option>
+                  <option value="<?php echo $data->id?>"><?php echo $data->nama ?></option>
                 <?php endforeach ?>
               </select>
             </div>
@@ -101,16 +103,17 @@
                     <i class="fa fa-inbox"></i>
                   </div>
                 </div> 
-                <input id="email" name="email" type="email" class="form-control">
+                <input id="email" value="<?= $objloker->email ?>" name="email" type="email" class="form-control">
               </div>
             </div>
           </div> 
           <div class="form-group row">
             <div class="offset-4 col-8">
-              <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+              <button name="submit" type="submit" class="btn btn-primary">Update</button>
               <button name="reset" type="reset" class="btn btn-secondary">Reset</button>
             </div>
           </div>
+          <input type="hidden" name="idedit" value="<?= $objloker->id ?>">
         <?= form_close() ?>  
     </fieldset>
     </div>
