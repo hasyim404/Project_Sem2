@@ -26,5 +26,6 @@
             $this->db->query($sql, $data);
         }
 
+
     }
 ?>
