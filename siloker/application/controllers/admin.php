@@ -9,6 +9,7 @@ class admin extends CI_Controller {
         $this->load->model('daftarmitra_model','form');
 
     }
+    
     public function index(){
         $this->load->view('layouts/header');
         $this->load->view('admin/index');
@@ -16,7 +17,7 @@ class admin extends CI_Controller {
     }
 
     public function kelola_loker(){
-        $data['data_loker']=$this->admin->getlokerAll();
+        $data['data_loker']=$this->admin->getDataLowongan();
 
         $this->load->view('layouts/header');
         $this->load->view('admin/kelola_loker',$data);
@@ -63,58 +64,67 @@ class admin extends CI_Controller {
         }
 
     public function kelola_mitra(){
-        $data['data_mitra']=$this->form->getmitraAll();
+        $data['data_mitra']=$this->admin->getDataMitra();
 
         $this->load->view('layouts/header');
         $this->load->view('admin/kelola_mitra',$data);
         $this->load->view('layouts/footer');
     }
 
-    public function edit_mitra($id){
-        $obj_mitra = $this->form->getmitraById($id);
-        $data['objmitra']=$obj_mitra;
-        $data['data_bdusaha'] = $this->form->getbdusahaAll();
-        $data['data_shusaha'] = $this->form->getshusahaAll();
+        public function edit_mitra($id){
+            $obj_mitra = $this->form->getmitraById($id);
+            $data['objmitra']=$obj_mitra;
+            $data['data_bdusaha'] = $this->form->getbdusahaAll();
+            $data['data_shusaha'] = $this->form->getshusahaAll();
 
-        $this->load->view('layouts/header');
-        $this->load->view('admin/edit_mitra',$data);
-        $this->load->view('layouts/footer');
-    }
-    public function update_mitra(){
-        $_nama              =   $this->input->post('nama');
-        $_alamat            =   $this->input->post('alamat');
-        $_kontak            =   $this->input->post('kontak');
-        $_telpon            =   $this->input->post('telpon');
-        $_email             =   $this->input->post('email');
-        $_web               =   $this->input->post('web');
-        $_bidang_usaha_id   =   $this->input->post('bidang_usaha_id');
-        $_sektor_usaha_id   =   $this->input->post('sektor_usaha_id');
-
-        $data = array(  'nama'              =>  $_nama,
-                        'alamat'            =>  $_alamat,
-                        'kontak'            =>  $_kontak,
-                        'telpon'            =>  $_telpon,
-                        'email'             =>  $_email,
-                        'web'               =>  $_web,
-                        'bidang_usaha_id'   =>  $_bidang_usaha_id,
-                        'sektor_usaha_id'   =>  $_sektor_usaha_id,
-        );
-
-        if (!empty($_idedit)){
-            $data['id']=$_idedit;
-            $this->form->update($data);
-        }else{
-            $this->form->save($data);
+            $this->load->view('layouts/header');
+            $this->load->view('admin/edit_mitra',$data);
+            $this->load->view('layouts/footer');
         }
 
-        redirect(base_url('index.php/admin/kelola_mitra'),'refresh');
-    }
+        public function update_mitra(){
+            $_nama              =   $this->input->post('nama');
+            $_alamat            =   $this->input->post('alamat');
+            $_kontak            =   $this->input->post('kontak');
+            $_telpon            =   $this->input->post('telpon');
+            $_email             =   $this->input->post('email');
+            $_web               =   $this->input->post('web');
+            $_bidang_usaha_id   =   $this->input->post('bidang_usaha_id');
+            $_sektor_usaha_id   =   $this->input->post('sektor_usaha_id');
 
-    public function delete_mitra($id){
-        $data['id']=$id;
-        $this->form->delete($data);
+            $data = array(  'nama'              =>  $_nama,
+                            'alamat'            =>  $_alamat,
+                            'kontak'            =>  $_kontak,
+                            'telpon'            =>  $_telpon,
+                            'email'             =>  $_email,
+                            'web'               =>  $_web,
+                            'bidang_usaha_id'   =>  $_bidang_usaha_id,
+                            'sektor_usaha_id'   =>  $_sektor_usaha_id,
+            );
 
-        redirect(base_url('index.php/admin/kelola_mitra'),'refresh');
+            if (!empty($_idedit)){
+                $data['id']=$_idedit;
+                $this->form->update($data);
+            }else{
+                $this->form->save($data);
+            }
+
+            redirect(base_url('index.php/admin/kelola_mitra'),'refresh');
+        }
+
+        public function delete_mitra($id){
+            $data['id']=$id;
+            $this->form->delete($data);
+
+            redirect(base_url('index.php/admin/kelola_mitra'),'refresh');
+        }
+    
+    public function kelola_peminat(){
+        $data['data_peminat']=$this->admin->getPeminatAll();
+
+        $this->load->view('layouts/header');
+        $this->load->view('admin/kelola_peminat',$data);
+        $this->load->view('layouts/footer');
     }
 
     public function isi_berita(){
