@@ -40,35 +40,29 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb bread justify-content-end bg-white">
         <li class="breadcrumb-item"><a href="<?=base_url('index.php')?>">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Lowongan Baru</li>
+        <li class="breadcrumb-item"><a href="<?=base_url('index.php/lowongan')?>">Lowongan Baru</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Lihat Detail</li>
         </ol>
       </nav>
-    </div>
+    </div>  
 
     <div class="container cf">
         <div class="main">
-          <div class="main3">
-          <h3>Daftar Lowongan Baru</h3></br>
-            <?php
-              $nomor=1;
-              foreach ($data_loker as $loker): ?>
-              <div class="col-md menu">
-                <h4>Lowongan <?= $nomor++ ?></h4></br>
-                <p>- Deskripsi: <?= $loker->deskripsi_pekerjaan ?>
-                </br>- Dibuka sampai <b><?= $loker->tanggal_akhir ?></b>
-                </br><a href="<?= base_url('index.php/lowongan/detail/'.$loker->id)?>" 
-                role="button" aria-pressed="true">&nbsp;&nbsp;Lihat Detail Lowongan</a></p>
-              </div>
-            <?php endforeach ?>
-
-              <!-- <div class="bottom_slide">
-                  <a class="slide1 active" href="lowongan1.html">1</a>
-                  <a class="slide2" href="#!">2</a>
-                  <a class="slide3" href="#!">3</a>
-              </div> -->
-          </div>
-         </div>
-      <!-- Lowongan 1 -->
+            <div class="main3">
+              <h3>Detail Lowongan</h3></br>
+                  
+                  <div class="col-md menu">
+                    <p>- Deskripsi: <?= $objdetail->deskripsi_pekerjaan ?>
+                    </br>- Mitra: <?= $objdetail->mitra_id ?>
+                    </br>- Email: <?= $objdetail->email ?>
+                    </br>- Dibuka sampai <b><?= $objdetail->tanggal_akhir ?></b></p>
+                    </br><a href="<?= base_url('index.php/lowongan/daftar/')?>" class="btn btn-info btn-md"
+                    role="button" aria-pressed="true">Daftar</a>
+                  </div>
+                 
+            </div>
+        </div>
+    <!-- Lowongan 1 -->
       <!-- Sidebar -->
       <div class="sidebar">
         <h3>Berita Terkini:</h3>

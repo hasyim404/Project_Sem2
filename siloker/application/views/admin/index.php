@@ -48,28 +48,34 @@
     <!-- menu -->
     <div class="row">
         <div class="col-md-12 mt-2 ml-2 mr-2">
-            <div class="row justify-content-center text-center">
-                <div class="col-md-2 d-flex flex-column menu btn-light">
+            <div class="row d-flex justify-content-start text-center">
+                <div class="col-md menu btn-light">
                     <a href="<?=base_url('index.php/admin/kelola_loker')?>" role="button" aria-pressed="true">
-                        <i class="fa fa-briefcase fa-5x text-info" aria-hidden="true"></i></br>
+                        <i class="fa fa-briefcase fa-4x text-info" aria-hidden="true"></i></br>
                         <p>Kelola Lowongan Kerja</p>
                     </a>
                 </div>
-                <div class="col-md-2 d-flex flex-column menu btn-light">
+                <div class="col-md menu btn-light">
                     <a href="<?=base_url('index.php/admin/kelola_mitra')?>" role="button" aria-pressed="true">
-                        <i class="fa fa-user-plus fa-5x text-info" aria-hidden="true"></i></br>
+                        <i class="fas fa-user-edit fa-4x text-info" aria-hidden="true"></i></br>
                         <p>Kelola Mitra</p>
                     </a>
                 </div>
-                <div class="col-md-2 d-flex flex-column menu btn-light">
+                <div class="col-md menu btn-light">
+                    <a href="<?=base_url('index.php/admin/kelola_peminat')?>" role="button" aria-pressed="true">
+                        <i class="far fa-id-card fa-4x text-info" aria-hidden="true"></i></br>
+                        <p>Kelola Peminat Lowongan</p>
+                    </a>
+                </div>
+                <div class="col-md menu btn-light">
                     <a href="<?=base_url('index.php/admin/isi_berita')?>" role="button" aria-pressed="true">
-                        <i class="fas fa-folder-plus fa-5x text-info" aria-hidden="true"></i></br>
+                        <i class="fas fa-folder-plus fa-4x text-info" aria-hidden="true"></i></br>
                         <p>Isi Berita</p>
                     </a>
                 </div>
-                <div class="col-md-2 d-flex flex-column menu btn-light">
+                <div class="col-md menu btn-light">
                     <a href="<?=base_url('index.php/admin/daftar_berita')?>" role="button" aria-pressed="true">
-                        <i class="fas fa-newspaper fa-5x text-info" aria-hidden="true"></i></br>
+                        <i class="fas fa-newspaper fa-4x text-info" aria-hidden="true"></i></br>
                         <p>Daftar Berita</p>
                     </a>
                 </div>
