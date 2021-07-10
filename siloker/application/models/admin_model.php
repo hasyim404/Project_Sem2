@@ -11,6 +11,26 @@
             return $query->result();
         }
 
+        public function getPeminatById($id){
+            $query = $this->db->get_where('peminat_lowongan', array('id' => $id));
+            return $query->row();
+        }
+
+        public function getLowonganById($id){
+            $query = $this->db->get_where('lowongan', array('id' => $id));
+            return $query->row();
+        }
+
+        public function getProdiAll(){
+            $query = $this->db->get('prodi');
+            return $query->result();
+        }
+        
+        public function getLowonganAll(){
+            $query = $this->db->get('lowongan');
+            return $query->result();
+        }
+
         public function getById($id){
             $query = $this->db->get_where('lowongan', array('id' => $id));
             return $query->row();

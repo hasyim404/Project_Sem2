@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <?php echo form_open('login');?>
-		<div class="container">
+                <div class="container">
                     <div class="form-group row">
                         <label for="user" class="col-sm-3 col-form-label">Username</label>
                         <div class="col-sm">
@@ -58,14 +58,13 @@
                         <input type="password" class="form-control" id="password" name="password" required placeholder="Masukkan Password">
                         </div>  
                     </div>
-		</div>
+                </div>
                     <div class="form-group row btn1">
                         <div class="col text-center">
                             <button name="submit" type="submit" class="btn btn-primary">Sign In</button>
                         </div>
                     </div>
                     <div class="text-center">
-											// belum
                         <?php
                             if(isset($info)){
                                 echo '<p>'.$info.'</p>';

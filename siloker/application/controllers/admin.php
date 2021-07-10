@@ -5,8 +5,9 @@ class admin extends CI_Controller {
     public function __construct(){
         parent::__construct();
         $this->load->model('admin_model','admin');
-        $this->load->model('isiloker_model', 'loker');
+        $this->load->model('isiloker_model','loker');
         $this->load->model('daftarmitra_model','form');
+        $this->load->model('peminat_model','peminat');
 
     }
     
@@ -120,12 +121,54 @@ class admin extends CI_Controller {
         }
     
     public function kelola_peminat(){
-        $data['data_peminat']=$this->admin->getPeminatAll();
+        $data['data_peminat']=$this->peminat->getDataPeminat();
 
         $this->load->view('layouts/header');
         $this->load->view('admin/kelola_peminat',$data);
         $this->load->view('layouts/footer');
     }
+        public function edit_peminat($id){
+            $obj_peminat = $this->admin->getPeminatById($id);
+            $data['objpeminat']=$obj_peminat;
+            $data['data_prodi'] = $this->admin->getProdiAll();
+            $data['data_lowongan'] = $this->admin->getLowonganAll();
+
+            $this->load->view('layouts/header');
+            $this->load->view('admin/edit_peminat',$data);
+            $this->load->view('layouts/footer');
+        }
+
+        public function update_peminat(){
+            $_nim           =   $this->input->post('nim');
+            $_nama          =   $this->input->post('nama');
+            $_alasan        =   $this->input->post('alasan');
+            $_prodi_id      =   $this->input->post('prodi_id');
+            $_lowongan_id   =   $this->input->post('lowongan_id');
+            $_idedit        =   $this->input->post('idedit');
+    
+            $data = array(  'nim'           =>  $_nim,
+                            'nama'          =>  $_nama,
+                            'alasan'        =>  $_alasan,
+                            'prodi_id'      =>  $_prodi_id,
+                            'lowongan_id'   =>  $_lowongan_id,
+            );
+    
+            if (!empty($_idedit)){
+                $data['id']=$_idedit;
+                $this->peminat->update($data);
+            }else{
+                $this->peminat->save($data);
+            }
+    
+            redirect(base_url('index.php/admin/kelola_peminat'),'refresh');
+        }
+
+        public function delete_peminat($id){
+            $data['id']=$id;
+            $this->peminat->delete($data);
+
+            redirect(base_url('index.php/admin/kelola_peminat'),'refresh');
+        }
 
     public function isi_berita(){
         $this->load->view('layouts/header');

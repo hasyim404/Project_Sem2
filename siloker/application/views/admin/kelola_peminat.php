@@ -63,8 +63,7 @@
               <td><?= $peminat->alasan ?></td>
               <td><?= $peminat->prodi_id ?></td>
               <td><?= $peminat->lowongan_id ?></td>
-              <td><a href="<?= base_url('index.php/admin/detail_mitra/'.$peminat->id)?>" class="btn btn-info btn-sm" role="button" aria-pressed="true"><i class="fas fa-info"></i></a>
-              <a href="<?= base_url('index.php/admin/edit_peminat/'.$peminat->id)?>" class="btn btn-info btn-sm" role="button" aria-pressed="true"><i class="fas fa-edit"></i></a>
+              <td><a href="<?= base_url('index.php/admin/edit_peminat/'.$peminat->id)?>" class="btn btn-info btn-sm" role="button" aria-pressed="true"><i class="fas fa-edit"></i></a>
               <a href="<?= base_url('index.php/admin/delete_peminat/'.$peminat->id)?>" class="btn btn-danger btn-sm active" role="button" aria-pressed="true"
               onclick="return onDelete(\'Anda yakin untuk menghapus ? '\)"><i class="fas fa-trash-alt"></i></a></td></tr>
           <?php endforeach ?>
