@@ -90,12 +90,11 @@
 
       <!-- Sidebar -->
       <div class="sidebar">
-        <h3>Berita Terkini:</h3>
-        <a href="<?=base_url('index.php')?>"><p class="pberita">Seminar & Workshop - Materi Microservice</p></a>
-        <a href="<?=base_url('index.php')?>"><p class="pberita">660.000 Pekerjaan Diprediksi Hilang Gegara Corona</p></a>
-        <a href="<?=base_url('index.php')?>"><p class="pberita">Pekerjaan yang Banyak Dibutuhkan Usai Pandemi</p></a>
-        <a href="<?=base_url('index.php')?>"><p class="pberita">Siap-siap! 85 Juta Pekerjaan Bakal Digantikan Robot</p></a>
+        <h3>Lowongan Terkini:</h3>
+        <?php foreach ($data_loker as $loker): ?>
+            <a href="<?= base_url('index.php/lowongan/detail/'.$loker->id)?>"><p class="pberita">
+            <?= $loker->deskripsi_pekerjaan?> </p></a>
+        <?php endforeach ?>
       </div>
       <!-- /Sidebar -->
     </div>
-  <!-- /isi -->

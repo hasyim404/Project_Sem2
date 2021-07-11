@@ -72,10 +72,10 @@
       <!-- Sidebar -->
       <div class="sidebar">
         <h3>Berita Terkini:</h3>
-        <a href="<?=base_url('index.php')?>"><p class="pberita">Seminar & Workshop - Materi Microservice</p></a>
-        <a href="<?=base_url('index.php')?>"><p class="pberita">660.000 Pekerjaan Diprediksi Hilang Gegara Corona</p></a>
-        <a href="<?=base_url('index.php')?>"><p class="pberita">Pekerjaan yang Banyak Dibutuhkan Usai Pandemi</p></a>
-        <a href="<?=base_url('index.php')?>"><p class="pberita">Siap-siap! 85 Juta Pekerjaan Bakal Digantikan Robot</p></a>
+        <a href="<?=base_url('index.php/berita/berita1')?>"><p class="pberita">Seminar & Workshop - Materi Microservice</p></a>
+        <a href="<?=base_url('index.php/berita/berita2')?>"><p class="pberita">660.000 Pekerjaan Diprediksi Hilang Gegara Corona</p></a>
+        <a href="<?=base_url('index.php/berita/berita3')?>"><p class="pberita">Pekerjaan yang Banyak Dibutuhkan Usai Pandemi</p></a>
+        <a href="<?=base_url('index.php/berita/berita4')?>"><p class="pberita">Siap-siap! 85 Juta Pekerjaan Bakal Digantikan Robot</p></a>
       </div>
       <!-- /Sidebar -->
     </div>

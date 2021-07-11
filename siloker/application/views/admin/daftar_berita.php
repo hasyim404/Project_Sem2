@@ -62,9 +62,9 @@
             <td>11 Jan 2021</td>
             <td>Seminar & workshop-Penerapan Materi Microservice</td>
             <td><a href="<?=base_url('index.php')?>"><i class="fas fa-eye"></i></a></td>
-            <td><a href="#"><i class="fas fa-info-circle"></i></a></br>
-            </a> <a href="#"><i class="fas fa-edit"></i> </a></br>
-            <a href="#"><i class="fas fa-trash-alt"></i></a>
+            <td><a href="#!"><i class="fas fa-info-circle"></i></a></br>
+            </a> <a href="#!"><i class="fas fa-edit"></i> </a></br>
+            <a href="#!"><i class="fas fa-trash-alt"></i></a>
             </td>
           </tr>
           <tr>
@@ -72,9 +72,9 @@
             <td>18 Jan 2021</td>
             <td>660.000 Pekerjaan Diprediksi Hilang Gegara Corona</td>
             <td><a href="<?=base_url('index.php')?>"><i class="fas fa-eye"></i></a></td>
-            <td><a href="#"><i class="fas fa-info-circle"></i></a></br>
-            </a> <a href="#"><i class="fas fa-edit"></i> </a></br>
-            <a href="#"><i class="fas fa-trash-alt"></i></a>
+            <td><a href="#!"><i class="fas fa-info-circle"></i></a></br>
+            </a> <a href="#!"><i class="fas fa-edit"></i> </a></br>
+            <a href="#!"><i class="fas fa-trash-alt"></i></a>
             </td>
           </tr>
           <tr>
@@ -82,9 +82,9 @@
             <td>15 Des 2020</td>
             <td>Pekerjaan yang Banyak Dibutuhkan Usai Pandemi</td>
             <td><a href="<?=base_url('index.php')?>"><i class="fas fa-eye"></i></a></td>
-            <td><a href="#"><i class="fas fa-info-circle"></i></a></br>
-            </a> <a href="#"><i class="fas fa-edit"></i> </a></br>
-            <a href="#"><i class="fas fa-trash-alt"></i></a>
+            <td><a href="#!"><i class="fas fa-info-circle"></i></a></br>
+            </a> <a href="#!"><i class="fas fa-edit"></i> </a></br>
+            <a href="#!"><i class="fas fa-trash-alt"></i></a>
             </td>
           </tr>
           <tr>
@@ -92,9 +92,9 @@
             <td>15 Jan 2021</td>
             <td>Siap-siap! 85 Juta Pekerjaan Bakal Digantikan Robot</td>
             <td><a href="<?=base_url('index.php')?>"><i class="fas fa-eye"></i></a></td>
-            <td><a href="#"><i class="fas fa-info-circle"></i></a></br>
-            </a> <a href="#"><i class="fas fa-edit"></i> </a></br>
-            <a href="#"><i class="fas fa-trash-alt"></i></a>
+            <td><a href="#!"><i class="fas fa-info-circle"></i></a></br>
+            </a> <a href="#!"><i class="fas fa-edit"></i> </a></br>
+            <a href="#!"><i class="fas fa-trash-alt"></i></a>
             </td>
           </tr>
         </tbody>

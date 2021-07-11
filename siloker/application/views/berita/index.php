@@ -79,13 +79,13 @@
             </div>
         </div>
 
-        <!-- Sidebar -->
-        <div class="sidebar">
-        <h3>Lowongan Baru:</h3>
-        <a href="#!"><p class="pberita">Lowongan1</p></a>
-        <a href="#!"><p class="pberita">Lowongan2</p></a>
-        <a href="#!"><p class="pberita">Lowongan3</p></a>
-        <a href="#!"><p class="pberita">Lowongan4</p></a>
-        </div>
-        <!-- /Sidebar -->
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <h3>Lowongan Terkini:</h3>
+        <?php foreach ($data_loker as $loker): ?>
+            <a href="<?= base_url('index.php/lowongan/detail/'.$loker->id)?>"><p class="pberita">
+            <?= $loker->deskripsi_pekerjaan?> </p></a>
+        <?php endforeach ?>
+      </div>
+      <!-- /Sidebar -->
     </div>

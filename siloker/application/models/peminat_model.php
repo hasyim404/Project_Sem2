@@ -16,14 +16,25 @@
             $this->db->query($sql, $data);
         }
 
+        public function getProdiAll(){
+            $query = $this->db->get('prodi');
+            return $query->result();
+        }
+
+        public function getLowonganAll(){
+            $query = $this->db->get('lowongan');
+            return $query->result();
+        }
+
         public function getDataPeminat(){
-            $this->db->select('peminat_lowongan.*, prodi.nama AS prodi_id, lowongan.deskripsi_pekerjaan AS lowongan_id');
+            $this->db->select('peminat_lowongan.*, prodi.nama, lowongan.deskripsi_pekerjaan');
             $this->db->from('peminat_lowongan');
             $this->db->join('prodi','prodi.id = peminat_lowongan.prodi_id');
             $this->db->join('lowongan','lowongan.id = lowongan_id');
             $query = $this->db->get();
             return $query->result();
         }
+
     
     }
 ?>
