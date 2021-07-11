@@ -11,7 +11,7 @@ class user extends CI_Controller {
             if($_username == 'admin' && $_password == 'admin123'){
                 $this->session->set_userdata('username',$_username);
                 $this->session->set_userdata('role','Admin');
-                redirect(base_url('index.php/'),'refresh');
+                redirect(base_url('index.php/admin'),'refresh');
             }else{
                 $data['info']='USERNAME atau PASSWORD salah';
             }

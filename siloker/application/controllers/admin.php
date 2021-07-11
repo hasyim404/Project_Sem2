@@ -123,7 +123,7 @@ class admin extends CI_Controller {
     
     public function kelola_peminat(){
         $data['data_peminat']=$this->peminat->getDataPeminat();
-
+        
         $this->load->view('layouts/header');
         $this->load->view('admin/kelola_peminat',$data);
         $this->load->view('layouts/footer');

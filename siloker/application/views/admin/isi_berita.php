@@ -1,6 +1,6 @@
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
       <a class="navbar-brand" href="<?=base_url('index.php')?>">SILOKERNF</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -8,8 +8,9 @@
     
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="<?=base_url('index.php')?>"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="<?=base_url('index.php')?>"><i class="fa fa-home" aria-hidden="true"></i>
+              Home<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?=base_url('index.php/lowongan')?>">Lowongan Baru</a>
@@ -18,7 +19,7 @@
               <a class="nav-link" href="<?=base_url('index.php/isi_loker')?>">Isi Loker</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="<?=base_url('index.php/daftar_berita')?>">Daftar Mitra</a>
+              <a class="nav-link" href="<?=base_url('index.php/daftar_mitra')?>">Daftar Mitra</a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="<?=base_url('index.php/berita')?>">Berita</a>
@@ -34,16 +35,37 @@
             $username = 'Login';
           }
         ?>
-        <a class="nav-link" href="<?=base_url('index.php/user/login')?>" id="navbarDropdown">
-          <i class="fas fa-lg fa-user-circle"></i> <?=$username?>
-        </a>
-        <?php
-            if($this->session->has_userdata('username')){
-        ?>
-          <a href="<?=base_url('index.php/user/logout')?>" class="btn btn-outline-info tombol btn-md" role="button" aria-pressed="true">Logout</a>
-        <?php
-            }
-        ?>
+        <div class="navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#!" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-lg fa-user-circle"></i> <?=$username?>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#!">My Account</a>
+                        <div class="dropdown-divider"></div>
+                        <?php 
+                          if($this->session->has_userdata('username')){ ?>
+                        <?php 
+                          } else{ ?>
+                          <div class="container">
+                            <a class="btn btn-primary dropdown-item active" href="<?=base_url('index.php/user/login')?>">Login</a>
+                          </div>
+                        <?php
+                          }
+                        ?>
+                        <?php 
+                          if($this->session->has_userdata('username')){ ?>
+                          <div class="container">
+                            <a class="btn btn-danger dropdown-item active" href="<?=base_url('index.php/user/logout')?>">Logout</a>
+                          </div>
+                        <?php 
+                          } 
+                        ?>
+                    </div>
+                </li>
+            </ul>
+        </div>
       </div>
   </nav>
   <!-- Navbar -->

@@ -27,7 +27,7 @@
         }
 
         public function getDataPeminat(){
-            $this->db->select('peminat_lowongan.*, prodi.nama, lowongan.deskripsi_pekerjaan');
+            $this->db->select('peminat_lowongan.*, prodi.nama AS prodi_id, lowongan.deskripsi_pekerjaan AS lowongan_id');
             $this->db->from('peminat_lowongan');
             $this->db->join('prodi','prodi.id = peminat_lowongan.prodi_id');
             $this->db->join('lowongan','lowongan.id = lowongan_id');
