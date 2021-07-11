@@ -8,9 +8,9 @@
     
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="<?=base_url('index.php')?>"><i class="fa fa-home" aria-hidden="true"></i>
-              Home<span class="sr-only">(current)</span></a>
+              Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?=base_url('index.php/lowongan')?>">Lowongan Baru</a>
@@ -37,9 +37,9 @@
         ?>
         <div class="navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                <li class="nav-item dropdown">
+                <li class="nav-item active dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#!" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-lg fa-user-circle"></i> <?=$username?>
+                    <i class="fas fa-lg fa-user-circle"></i> <?=$username?> <span class="sr-only">(current)</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#!">My Account</a>
@@ -84,13 +84,13 @@
                     <div class="form-group row">
                         <label for="username" class="col-sm-3 col-form-label">Username</label>
                         <div class="col-sm">
-                        <input type="text" class="form-control" id="username" name="username" required placeholder="Masukkan Username">
+                        <input type="text" class="form-control" id="username" name="username" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="password" class="col-sm-3 col-form-label">Password</label>
                         <div class="col-sm">
-                        <input type="password" class="form-control" id="password" name="password" required placeholder="Masukkan Password">
+                        <input type="password" class="form-control" id="password" name="password" required>
                         </div>  
                     </div>
                 </div>

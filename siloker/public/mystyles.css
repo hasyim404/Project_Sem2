@@ -5,6 +5,13 @@ a {
     text-decoration: none !important;
 }
 
+.sticky.is-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
 /* Home */
     /* --------Jumbotron-------- */
     .home h1 {

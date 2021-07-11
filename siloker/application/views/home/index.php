@@ -1,6 +1,6 @@
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
       <a class="navbar-brand" href="<?=base_url('index.php')?>">SILOKERNF</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -28,6 +28,7 @@
                 <a class="nav-link" href="<?=base_url('index.php/about')?>">About</a>
             </li>
         </ul>
+        </span>
         <?php
           if($this->session->has_userdata('username')){
             $username = $this->session->username;

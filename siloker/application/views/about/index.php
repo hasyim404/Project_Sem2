@@ -10,7 +10,7 @@
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
             <a class="nav-link" href="<?=base_url('index.php')?>"><i class="fa fa-home" aria-hidden="true"></i>
-              Home<span class="sr-only">(current)</span></a>
+              Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?=base_url('index.php/lowongan')?>">Lowongan Baru</a>
@@ -24,8 +24,10 @@
           <li class="nav-item">
               <a class="nav-link" href="<?=base_url('index.php/berita')?>">Berita</a>
           </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?=base_url('index.php/about')?>">About</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="<?=base_url('index.php/about')?>">About
+                <span class="sr-only">(current)</span></a>
+                
             </li>
         </ul>
         <?php

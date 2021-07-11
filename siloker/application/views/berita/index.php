@@ -7,10 +7,10 @@
       </button>
     
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
             <a class="nav-link" href="<?=base_url('index.php')?>"><i class="fa fa-home" aria-hidden="true"></i>
-              Home<span class="sr-only">(current)</span></a>
+              Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?=base_url('index.php/lowongan')?>">Lowongan Baru</a>
@@ -21,8 +21,9 @@
           <li class="nav-item">
               <a class="nav-link" href="<?=base_url('index.php/daftar_mitra')?>">Daftar Mitra</a>
           </li>
-          <li class="nav-item">
-              <a class="nav-link" href="<?=base_url('index.php/berita')?>">Berita</a>
+          <li class="nav-item active">
+              <a class="nav-link" href="<?=base_url('index.php/berita')?>">Berita
+              <span class="sr-only">(current)</span></a>
           </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?=base_url('index.php/about')?>">About</a>
