@@ -92,6 +92,7 @@ class admin extends CI_Controller {
             $_web               =   $this->input->post('web');
             $_bidang_usaha_id   =   $this->input->post('bidang_usaha_id');
             $_sektor_usaha_id   =   $this->input->post('sektor_usaha_id');
+            $_idedit            =   $this->input->post('idedit');
 
             $data = array(  'nama'              =>  $_nama,
                             'alamat'            =>  $_alamat,

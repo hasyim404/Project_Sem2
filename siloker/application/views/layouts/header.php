@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Work+Sans:wght@400&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
+    
 </head>
 <body>
   <!-- Header -->

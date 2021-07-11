@@ -27,10 +27,23 @@
               <a class="nav-link" href="<?=base_url('index.php/about')?>">About</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search">
-          <a href="<?=base_url('index.php/login')?>" class="btn btn-outline-info tombol btn-md" role="button" aria-pressed="true">Login</a>
-        </form>
+        <?php
+          if($this->session->has_userdata('username')){
+            $username = $this->session->username;
+          }else{
+            $username = 'Login';
+          }
+        ?>
+        <a class="nav-link" href="<?=base_url('index.php/user/login')?>" id="navbarDropdown">
+          <i class="fas fa-lg fa-user-circle"></i> <?=$username?>
+        </a>
+        <?php
+            if($this->session->has_userdata('username')){
+        ?>
+          <a href="<?=base_url('index.php/user/logout')?>" class="btn btn-outline-info tombol btn-md" role="button" aria-pressed="true">Logout</a>
+        <?php
+            }
+        ?>
       </div>
   </nav>
   <!-- Navbar -->
@@ -40,7 +53,7 @@
         <div class="jumbotron jumbotron-fluid bg-info text-center admin">
             <div class="container">
             <h1 style="font-family: 'Varela Round', sans-serif;" class="display-4"><i class="fa fa-user" aria-hidden="true"></i>
-                Selamat Datang, Admin</h1>
+                Selamat Datang, <?=$username?></h1>
             <p class="lead">Silahkan pilih menu-menu dibawah ini untuk memulai mengelola data.</p>
             </div>
         </div>

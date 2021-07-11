@@ -1,12 +1,3 @@
-<script>
-function onDelete(pesan){
-    if (confirm(pesan)){
-        return true;
-    }else{
-        return false;
-    }
-}
-</script>
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-dark">
@@ -57,37 +48,45 @@ function onDelete(pesan){
   </nav>
   <!-- Navbar -->
 
-  <div class="container">
-      <nav aria-label="breadcrumb" style="padding-top: 30px;">
-        <ol class="breadcrumb bread justify-content-end bg-white">
-        <li class="breadcrumb-item"><a href="<?=base_url('index.php')?>">Home</a></li>
-        <li class="breadcrumb-item"><a href="<?=base_url('index.php/admin')?>">Admin</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Kelola Lowongan Kerja</li>
-        </ol>
-    </nav>
-  </div>
-  <div class="container">
-    <div class="table-responsive">
-      <table class="table table-bordered table-hover text-center bg-white">
-        <thead>
-            <tr>
-              <th>NO</th><th>Deskripsi Pekerjaan</th><th>Tanggal Akhir</th><th>Mitra</th><th>Email</th><th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-          <?php
-          $nomor=1;
-            foreach ($data_loker as $loker): ?>
-              <tr><td><?= $nomor++ ?></td>
-              <td><?= $loker->deskripsi_pekerjaan ?></td>
-              <td><?= $loker->tanggal_akhir ?></td>
-              <td><?= $loker->mitra_id ?></td>
-              <td><?= $loker->email ?></td>
-              <td><a href="<?= base_url('index.php/admin/edit_loker/'.$loker->id)?>" class="btn btn-info btn-sm" role="button" aria-pressed="true"><i class="fas fa-edit"></i></a>
-              <a href="<?= base_url('index.php/admin/delete_loker/'.$loker->id)?>" class="btn btn-danger btn-sm active" role="button" aria-pressed="true"
-              onclick="return onDelete(\'Anda yakin untuk menghapus ? '\)"><i class="fas fa-trash-alt"></i></a></td></tr>
-          <?php endforeach ?>
-        </tbody>
-      </table>
-    </div>
-  </div>
+    <!-- Login -->
+
+        <div class="container">
+            <div class="card justify-content-center">
+                <div class="row">
+                    <div class="col text-center">
+                        <h2 class="login">LOGIN</h2>
+                    </div>
+                </div>
+                <?php echo form_open('user/login');?>
+                <div class="container">
+                    <div class="form-group row">
+                        <label for="username" class="col-sm-3 col-form-label">Username</label>
+                        <div class="col-sm">
+                        <input type="text" class="form-control" id="username" name="username" required placeholder="Masukkan Username">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="password" class="col-sm-3 col-form-label">Password</label>
+                        <div class="col-sm">
+                        <input type="password" class="form-control" id="password" name="password" required placeholder="Masukkan Password">
+                        </div>  
+                    </div>
+                </div>
+                    <div class="form-group row btn1">
+                        <div class="col text-center">
+                            <button name="submit" type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <?php
+                            if(isset($info)){
+                                echo '<p>'.$info.'</p>';
+                            }
+                        ?>
+                    </div>
+                <?php echo form_close()?>
+            </div>
+        </div>
+        
+    <!-- /Login -->
+
