@@ -51,7 +51,7 @@ function onDelete(pesan){
                     <i class="fas fa-lg fa-user-circle"></i> <?=$username?>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#!">My Account</a>
+                        <a class="dropdown-item" href="<?=base_url('index.php/admin')?>">My Account</a>
                         <div class="dropdown-divider"></div>
                         <?php 
                           if($this->session->has_userdata('username')){ ?>
@@ -107,7 +107,7 @@ function onDelete(pesan){
               <td><?= $loker->email ?></td>
               <td><a href="<?= base_url('index.php/admin/edit_loker/'.$loker->id)?>" class="btn btn-info btn-sm" role="button" aria-pressed="true"><i class="fas fa-edit"></i></a>
               <a href="<?= base_url('index.php/admin/delete_loker/'.$loker->id)?>" class="btn btn-danger btn-sm active" role="button" aria-pressed="true"
-              onclick="return onDelete(\'Anda yakin untuk menghapus ? '\)"><i class="fas fa-trash-alt"></i></a></td></tr>
+              onclick="return onDelete('Anda yakin untuk menghapus ?')"><i class="fas fa-trash-alt"></i></a></td></tr>
           <?php endforeach ?>
         </tbody>
       </table>

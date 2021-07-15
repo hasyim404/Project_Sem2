@@ -42,7 +42,7 @@
                     <i class="fas fa-lg fa-user-circle"></i> <?=$username?> <span class="sr-only">(current)</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#!">My Account</a>
+                        <a class="dropdown-item" href="<?=base_url('index.php/admin')?>">My Account</a>
                         <div class="dropdown-divider"></div>
                         <?php 
                           if($this->session->has_userdata('username')){ ?>
